@@ -1,0 +1,107 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.bac {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  background-color: rgb(255, 255, 255); 
+  padding: 10px 0;
+  z-index: 1000; 
+}
+
+
+.logo {
+  height: 50px; 
+  width: auto; 
+  display: block;
+  margin: 0 auto; 
+}
+
+nav {
+  text-align: center; 
+} 
+
+
+
+.container {
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 600px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  width: 80%;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #f4f000;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #d9ff00b2;
+}
+
+.certificate-container {
+  margin-top: 5px;
+  text-align: left;
+  display: inline-block;
+  max-width: 90%; /* Ensures it doesn't exceed 90% of the screen width */
+  border: 2px solid #dcd20e;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.certificate-image {
+  max-width: 600px; /* Limit the width of the certificate image */
+  width: 100%; /* Ensure it fits the container */
+  height: 450px; /* Maintain aspect ratio */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.copyright {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+ 
+  font-size: 14px;
+  z-index: 999;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+

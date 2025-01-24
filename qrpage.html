@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificate Validation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bac">
+        <nav> 
+            <img src="assests/22.png" class="logo">
+        </nav>
+    </div> 
+
+  <div class="container"><br>
+    <h1>Certificate Details</h1>
+    <div id="certificateDetails"></div>
+  </div>
+
+  <div class="copyright">
+    <p>©Akanksha Charitable Trust® Puttur. All rights are reserved</p>
+  </div>
+  
+  <script src="script.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const certCode = urlParams.get("code");
+    const detailsDiv = document.getElementById("certificateDetails");
+
+    const result = getCertificateDetails(certCode);
+    if (result) {
+      detailsDiv.innerHTML = `
+        <div class="certificate-container">
+          <img src="${result.image}" alt="noo" class="certificate-image">
+          <h2>${result.name}</h2>
+          <p>Course: ${result.course}</p>
+          <p>Date of Issue : ${result.date}</p>
+          <p>Certificate Code: ${result.code}</p>
+        </div>
+      `;
+    } else {
+      detailsDiv.innerHTML = `<p style="color: red;">Invalid Certificate Code</p>`;
+    }
+  </script>
+</body>
+</html>

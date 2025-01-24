@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificate Validation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <div class="bac">
+            <nav> 
+                <img src="assests/22.png" class="logo">
+            </nav>
+        </div> 
+
+  <div class="container">
+    <h1>Certificate Validation</h1>
+    <form id="certForm">
+      <i><label for="certCode">Enter Certification Code:</label></i><br><br>
+      <input type="text" id="certCode" name="certCode" required>
+      <button type="submit">Validate</button>
+    </form>
+    <div id="certificateDetails"></div>
+  </div>
+
+  <div class="copyright">
+    <p>©Akanksha Charitable Trust® Puttur. All rights are reserved</p>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById("certForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const certCode = document.getElementById("certCode").value.trim();
+      const result = getCertificateDetails(certCode);
+
+      const detailsDiv = document.getElementById("certificateDetails");
+      if (result) {
+        detailsDiv.innerHTML = `
+          <div class="certificate-container">
+            <img src="${result.image}" alt="Certificate" class="certificate-image">
+            <h2>${result.name}</h2>
+            <p>Course: ${result.course}</p>
+            <p>Date: ${result.date}</p>
+            <p>Certificate Code: ${result.code}</p>
+          </div>
+        `;
+      } else {
+        detailsDiv.innerHTML = `<p style="color: red;">Invalid Certificate Code</p>`;
+      }
+    });
+  </script>
+</body>
+</html>
